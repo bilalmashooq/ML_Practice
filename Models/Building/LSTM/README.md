@@ -45,14 +45,17 @@
 - **Encoding Layers (`φ`)**: Reduce the data dimensions and learn a compressed latent representation.
 - **Decoding Layers (`ψ`)**: Reconstruct the original data from the latent space.
 - **Latent Space (`z`)**: The reduced representation of the input data.
+### Optimization Objective for Autoencoders
 
-**Optimization Objective**:
-- Minimize the reconstruction error:
-\[
-\min_{\theta_\phi, \theta_\psi} \| X - \psi(\phi(X)) \|^2
-\]
-where \( \theta_\phi \) and \( \theta_\psi \) are the weights of the encoding and decoding functions, respectively.
+The goal of training an autoencoder is to minimize the reconstruction error between the original input X and the reconstructed output X^. The objective function is defined as:
 
+min_{θφ, θψ} || X - ψ(φ(X)) ||^2
+
+where:
+- θφ and θψ are the weights of the encoding and decoding functions, respectively.
+- φ(X) is the encoding function that maps X to a latent representation.
+- ψ(φ(X)) is the decoding function that reconstructs X^ from the latent space.
+- || . ||^2 denotes the squared Euclidean distance between the original and reconstructed data.
 **Functionality**:
 - Autoencoders learn the normal patterns in data during training. When anomalous data is fed into the trained model, the reconstruction error is significantly higher due to deviations from learned normal patterns.
 - By defining an anomaly threshold (\(\delta\)), data points with a reconstruction error greater than \(\delta\) are marked as anomalies.
