@@ -1,0 +1,2 @@
+# Neural Network Basics: An Introduction
+This repository provides a simple and clear introduction to the basic architecture of neural networks. It covers fundamental concepts, the structure of neurons, and a step-by-step guide on combining these neurons into a functional neural network. You will also find examples of training a network and evaluating its performance.
